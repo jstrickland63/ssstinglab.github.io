@@ -1,2 +1,34 @@
-<h1>Hello!</h1>
-Theme: slate
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>SSSTING Lab</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/pages-themes/slate@v1.0.0/_sass/slate.scss">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/pages-themes/slate@v1.0.0/_sass/slate/_syntax-highlighting.scss">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/pages-themes/slate@v1.0.0/_sass/slate/_normalize.scss">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/pages-themes/slate@v1.0.0/_sass/slate/_layout.scss">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/pages-themes/slate@v1.0.0/_sass/slate/_variables.scss">
+  </head>
+  <body>
+    <header>
+      <div class="wrapper">
+        <a href="/" class="site-title">{{ site.title }}</a>
+        <nav>
+          <ul>
+            {% for page in site.pages %}
+              <li><a href="{{ page.url }}">{{ page.title }}</a></li>
+            {% endfor %}
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <div class="wrapper">
+      {{ content }}
+    </div>
+    <footer>
+      <div class="wrapper">
+        <p>&copy; {{ site.time | date: '%Y' }} {{ site.title }}</p>
+      </div>
+    </footer>
+  </body>
+</html>
